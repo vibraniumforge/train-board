@@ -9,7 +9,6 @@ module Api::V1
     end
 
     def show
-      # find_train
       if @train.nil?
         puts "Train not found"
         render json: { message: "Train NOT found.", success: false }, status: 406
@@ -23,49 +22,42 @@ module Api::V1
     end
 
     def create
-      byebug
       @train = Train.new(train_params)
-      # if @train.nil?
-      #   puts "Train not found"
-      # end
       if @train.save && @train.valid?
-        puts "train saved"
+        puts "=> train saved"
         render json: { message: "Train successfully saved.", success: true, data: @train }, status: 200
       else
         puts "Train not saved"
-        puts "Errors= #{@train.errors.full_messages}"
-        render json: { message: "Train NOT saved because #{@train.errors.full_messages}", success: false }, status: 406
+        puts "Errors= #{@train.errors.full_messages.join(", ")}"
+        render json: { message: "Train NOT saved because #{@train.errors.full_messages.join(", ")}", success: false }, status: 406
       end
     end
         
     def edit
-      # find_train
     end
 
     def update
-      # find_train
       if @train.nil?
         puts "Train not found"
         render json: { message: "Train not found", success: false }, status: 406
       end
       if @train.update(train_params) && @train.valid?
-        puts "train saved"
+        puts "Train updated"
         render json: { message: "Train successfully saved.", success: true, data: @train }, status: 200
       else
         puts "Train not saved"
-        puts @train.errors.full_messages
-        render json: { message: "Train NOT updated because #{@train.errors.full_messages}", success: false }, status: 406
+        puts "Errors= #{@train.errors.full_messages.join(", ")}"
+        render json: { message: "Train NOT updated because #{@train.errors.full_messages.join(", ")}", success: false }, status: 406
       end
     end
 
     def destroy
-      # find_train
       if @train.destroy
         render json: { message: "Train successfully deleted.", success: true, data: @train }, status: 200
       else
-        puts "Error in delete: #{@train.errors.full_messages}"
-        puts @train.errors.full_messages
-        render json: { message: "Train NOT successfully deleted.", success:false, data: @train.errors.full_messages }, status: 406
+        puts "Error in delete: #{@train.errors.full_messages.join(", ")}"
+        puts @train.errors.full_messages.join(", ")
+        render json: { message: "Train NOT successfully deleted.", success:false, data: @train.errors.full_messages.join(", ") }, status: 406
       end
     end
 
