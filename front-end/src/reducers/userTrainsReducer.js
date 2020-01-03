@@ -1,8 +1,8 @@
 const initialState = {
   userSavedTrains: [],
   trainToUpdate: [],
-  trainCreateResult: [],
-  trainErrors: []
+  trainErrors: [],
+  trainCreateResult: []
 };
 
 export default function userTrainsReducer(state = initialState, action) {
@@ -12,7 +12,7 @@ export default function userTrainsReducer(state = initialState, action) {
     case "GET_TRAIN_BY_ID":
       return { ...state, trainToUpdate: action.payload };
     case "CREATE_TRAIN":
-      return { ...state, trainCreateResult: action.payload };
+      return { ...state, trainCreateResult: action.payload, trainErrors: [] };
     case "TRAIN_ERRORS":
       return { ...state, trainErrors: action.payload };
     case "DELETE_TRAIN":
