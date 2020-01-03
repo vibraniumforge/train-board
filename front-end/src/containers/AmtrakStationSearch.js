@@ -27,14 +27,6 @@ class AmtrakStationSearch extends Component {
     }
   };
 
-  shouldComponentUpdate = nextProps => {
-    if (this.props.trains === nextProps.trains) {
-      return false;
-    } else {
-      return true;
-    }
-  };
-
   render() {
     return (
       <React.Fragment>
