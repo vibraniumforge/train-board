@@ -1,11 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
 Train.destroy_all
 
 trains = Train.create([
@@ -16,8 +8,9 @@ trains = Train.create([
     {destination: "Beijing", newtime:"", newtime24:"", origin: "Moscow", remarks_boarding: "On Time", scheduled: "0500", scheduled24: "1700", service: "Trans-Siberian Railway", trainno: "9"},
     {destination: "Perth Terminal", newtime:"", newtime24:"", origin: "Sydney Central", remarks_boarding: "On Time", scheduled: "0600", scheduled24: "1800", service: "Indian Pacific", trainno: "11"},
     {destination: "Melbourne - Southern Cross", newtime:"", newtime24:"", origin: "Adelaide - Parklands Terminal", remarks_boarding: "On Time", scheduled: "0700", scheduled24: "1900", service: "The Overland", trainno: "13"},
-    {destination: "Los Angeles Union Station", newtime:"", newtime24:"", origin: "Seattle King Street", remarks_boarding: "On Time", scheduled: "0945", scheduled24: "0945", service: "Coast Starlight", trainno: "14"},
-    {destination: "Hogwart's Caslte", newtime:"", newtime24:"", origin: "London - King's Cross", remarks_boarding: "On Time", scheduled: "0800", scheduled24: "2000", service: "Hogwart's Express", trainno: "15"},
+    {destination: "Darwin", newtime:"", newtime24:"", origin: "Adelaide - Parklands Terminal", remarks_boarding: "On Time", scheduled: "0700", scheduled24: "1900", service: "The Ghan", trainno: "15"},
+    {destination: "Los Angeles Union Station", newtime:"", newtime24:"", origin: "Seattle King Street", remarks_boarding: "On Time", scheduled: "0945", scheduled24: "0945", service: "Coast Starlight", trainno: "17"},
+    {destination: "Hogwart's Caslte", newtime:"", newtime24:"", origin: "London - King's Cross", remarks_boarding: "On Time", scheduled: "0800", scheduled24: "2000", service: "Hogwart's Express", trainno: "19"},
 ])
 
 puts "Seeds done."
