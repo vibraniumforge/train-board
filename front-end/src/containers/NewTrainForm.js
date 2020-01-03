@@ -11,14 +11,14 @@ class NewTrainForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      destination: "1234",
+      destination: "Spokane",
       newtime: "",
       newtime24: "",
       origin: "Seattle",
       remarks_boarding: "On Time",
       scheduled: "1234",
       scheduled24: "1234",
-      service: "Seattle Train",
+      service: "Washington Train",
       trainno: ""
     };
   }
@@ -34,8 +34,7 @@ class NewTrainForm extends Component {
     Promise.all([promise1]).then(() => {
       console.log(this.props.trainErrors.length);
       console.log(this.isValid());
-      if (this.props.trainErrors.length === 0 && this.isValid()) {
-        console.log("in if block 2");
+      if (this.isValid()) {
         this.clearForm();
         this.props.history.push("/view_user_trains");
       }
@@ -77,7 +76,7 @@ class NewTrainForm extends Component {
     return (
       <React.Fragment>
         <form id="new-train" className="center">
-          <h4>Add a new train</h4>
+          <h4>Create a new train</h4>
           <div>
             <label htmlFor="train-destination">Destination</label>
             <input
