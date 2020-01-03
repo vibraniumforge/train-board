@@ -54,8 +54,7 @@ class StationSelect extends Component {
       <React.Fragment>
         <form>
           <div id="station-select" className="center">
-            <h4>Choose a station:</h4>
-            <br />
+            {/* <h4>Choose a station:</h4> */}
             <select
               name="stationCode"
               value={this.state.selectedStation}

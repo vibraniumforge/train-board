@@ -20,7 +20,6 @@ class UserTrains extends Component {
       <React.Fragment>
         <form>
           <div className="center">
-            <h4>View my Trains:</h4>{" "}
             <button type="button" id="trainsBtn" onClick={this.onSubmitTrains}>
               Refresh
             </button>
