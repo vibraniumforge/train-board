@@ -37,7 +37,8 @@ export default function userTrainsReducer(state = initialState, action) {
         ...state,
         userSavedTrains: state.userSavedTrains.map(train =>
           train.id === action.payload.id ? (train = updatedTrain) : train
-        )
+        ),
+        trainErrors: []
       };
     default:
       return state;
