@@ -91,14 +91,37 @@ export const updateTrain = (id, train) => {
   };
   return dispatch => {
     fetch(`${url}/${id}`, data)
-      .then(res => res.json())
-      .then(res =>
-        dispatch({
-          type: "UPDATE_TRAIN",
-          payload: res.data
-        })
-      )
-      .catch(err => console.log("Error in updateTrain=", err));
+      .then(res => {
+        if (res.ok) {
+          res.json().then(res => {
+            dispatch({
+              type: "UPDATE_TRAIN",
+              payload: res.data
+            });
+          });
+        } else {
+          res.json().then(res =>
+            dispatch({
+              type: "TRAIN_ERRORS",
+              payload: res.data
+            })
+          );
+        }
+      })
+      .catch(err => {
+        dispatch({ type: "TRAIN_ERRORS", payload: err });
+        console.log("Error in createTrain=", err);
+      });
+    // old version
+    // fetch(`${url}/${id}`, data)
+    //   .then(res => res.json())
+    //   .then(res =>
+    //     dispatch({
+    //       type: "UPDATE_TRAIN",
+    //       payload: res.data
+    //     })
+    //   )
+    //   .catch(err => console.log("Error in updateTrain=", err));
   };
 };
 
