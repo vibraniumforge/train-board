@@ -46,7 +46,7 @@ module Api::V1
         render json: { message: "Train successfully saved.", success: true, data: @train }, status: 200
       else
         puts "Train not saved"
-        render json: { message: "Train NOT updated because #{@train.errors.full_messages.join(", ")}", success: false }, status: 406
+        render json: { message: "Train NOT updated because #{@train.errors.full_messages.join(", ")}", success: false, data: @train.errors.full_messages }, status: 406
         puts "Errors= #{@train.errors.full_messages.join(", ")}"
       end
     end
