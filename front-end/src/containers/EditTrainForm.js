@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-
 import { updateTrain } from "../actions/userTrainActions";
+import Errors from "../components/Errors";
 
 class TrainForm extends Component {
   constructor(props) {
@@ -48,8 +48,27 @@ class TrainForm extends Component {
     e.preventDefault();
     const updatedTrain = this.state;
     this.props.updateTrain(this.props.trainToUpdate.id, updatedTrain);
-    this.props.history.push("/view_user_trains");
-    this.clearForm();
+    if (this.isValid()) {
+      this.props.history.push("/view_user_trains");
+      this.clearForm();
+    }
+  };
+
+  isValid = () => {
+    if (
+      this.state.destination &&
+      this.state.scheduled.length === 4 &&
+      this.state.scheduled24.length === 4 &&
+      this.state.remarks_boarding &&
+      this.state.origin &&
+      this.state.service &&
+      this.state.trainno &&
+      (this.state.newtime.length === 0 || this.state.newtime.length === 4) &&
+      (this.state.newtime24.length === 0 || this.state.newtime24.length === 4)
+    ) {
+      return true;
+    }
+    return false;
   };
 
   clearForm = () => {
@@ -174,6 +193,9 @@ class TrainForm extends Component {
             Clear
           </button>
         </form>
+        {this.props.trainErrors.length > 0 ? (
+          <Errors trainErrors={this.props.trainErrors} />
+        ) : null}
       </React.Fragment>
     );
   }
