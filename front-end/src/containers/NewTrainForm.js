@@ -3,8 +3,8 @@ import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import { createTrain } from "../actions/userTrainActions";
+import Errors from "../components/Errors";
 
-// import Errors from "../components/Errors";
 // import Sample from "../components/Sample";
 
 class NewTrainForm extends Component {
@@ -19,7 +19,7 @@ class NewTrainForm extends Component {
       scheduled: "1234",
       scheduled24: "1234",
       service: "Washington Train",
-      trainno: ""
+      trainno: "2"
     };
   }
 
@@ -162,9 +162,8 @@ class NewTrainForm extends Component {
               onChange={this.handleChange}
             />
             <br />
-            <input
-              type="textarea"
-              id="errors"
+            {/* <textarea
+              id="fix-me"
               name="errors"
               placeholder=""
               disabled
@@ -174,7 +173,7 @@ class NewTrainForm extends Component {
                   : "error"
               }
               value={this.props.trainErrors.join(", ")}
-            />
+            /> */}
           </div>
           <br />
           <button
@@ -194,7 +193,9 @@ class NewTrainForm extends Component {
             Clear
           </button>
         </form>
-        {/* <Errors trainErrors={this.props.trainErrors} /> */}
+        {this.props.trainErrors.length > 0 ? (
+          <Errors trainErrors={this.props.trainErrors} />
+        ) : null}
         {/* <Sample /> */}
       </React.Fragment>
     );
@@ -202,7 +203,7 @@ class NewTrainForm extends Component {
 }
 
 const mapStateToProps = state => ({
-  trainToUpdate: state.userTrains.trainToUpdate,
+  // trainToUpdate: state.userTrains.trainToUpdate,
   trainErrors: state.userTrains.trainErrors
 });
 
