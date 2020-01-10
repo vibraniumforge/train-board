@@ -1,8 +1,5 @@
-class WelcomeController < ApplicationController
+class WelcomeController < ActionController::Base
   def index
-    # puts "fires"
-    # @trains = Train.all
-    # byebug
-    # render json: @trains
+
   end
 end
