@@ -39,6 +39,15 @@ class UserBoard extends Component {
     });
   }
 
+  // componentDidUpdate(prevProps) {
+  //   if (
+  //     this.props.userTrains.length > 0 &&
+  //     this.props.userTrains.length !== prevProps.userTrains.length
+  //   ) {
+  //     console.log("cDU fires");
+  //   }
+  // }
+
   onDeleteTrain = e => {
     e.preventDefault();
     this.props.deleteTrain(e.target.dataset.id);
@@ -52,7 +61,7 @@ class UserBoard extends Component {
 
   render() {
     const trainsInfo =
-      this.props.userTrains &&
+      this.props.userTrains.length > 0 &&
       this.props.userTrains.map(train => {
         return train.trainno.trim() ? (
           <tr key={train.id}>
