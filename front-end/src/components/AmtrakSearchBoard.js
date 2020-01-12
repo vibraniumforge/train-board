@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 
-import { nameHelper } from "../helpers/nameHelper";
+import { serviceHelper } from "../helpers/serviceHelper";
 import { remarksHelper } from "../helpers/remarksHelper";
 import { timeHelper } from "../helpers/timeHelper";
+import { stationHelper } from "../helpers/stationHelper";
 
 import Time from "./Time";
 
@@ -15,16 +16,16 @@ class AmtrakSearchBoard extends Component {
         return train.trainno.trim() ? (
           <tr key={index}>
             <td>{train.trainno}</td>
-            <td>{nameHelper(train.service)}</td>
-            <td>{train.destination}</td>
-            <td>{train.origin}</td>
+            <td>{serviceHelper(train.service)}</td>
+            <td>{stationHelper(train.destination)}</td>
+            <td>{stationHelper(train.origin)}</td>
             <td>{timeHelper(train.scheduled)}</td>
             <td>{timeHelper(train.scheduled24)}</td>
             <td>{timeHelper(train.newtime)}</td>
             <td>{timeHelper(train.newtime24)}</td>
 
             <td className={remarksHelper(train.remarks_boarding)}>
-              {nameHelper(train.remarks_boarding)}
+              {serviceHelper(train.remarks_boarding)}
             </td>
           </tr>
         ) : null;
