@@ -22,6 +22,8 @@ const store = createStore(
 // If the program does not work comment OUT the above line and comment IN the below line.
 // and be sure to comment in the import statement above.
 
+// also remove to work with non-chrome browsers
+
 // const store = createStore(rootReducer, applyMiddleware(thunk));
 
 ReactDOM.render(
