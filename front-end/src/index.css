@@ -88,15 +88,18 @@ form input {
   font-size: 16px;
   margin: 10px;
   border: 20px transparent;
+  font-weight: bold;
 }
 
 #new-train {
   color: yellow;
+  font-weight: bold;
   background-color: black;
 }
 
 #edit-train {
   color: yellow;
+  font-weight: bold;
   background-color: black;
 }
 
