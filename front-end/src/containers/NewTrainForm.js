@@ -19,7 +19,7 @@ class NewTrainForm extends Component {
       scheduled: "1234",
       scheduled24: "1234",
       service: "Washington Train",
-      trainno: "2"
+      trainno: "21"
     };
   }
 
@@ -32,8 +32,6 @@ class NewTrainForm extends Component {
     const newTrain = this.state;
     const promise1 = this.props.createTrain(newTrain);
     Promise.all([promise1]).then(() => {
-      console.log(this.props.trainErrors.length);
-      console.log(this.isValid());
       if (this.isValid()) {
         this.clearForm();
         this.props.history.push("/view_user_trains");
@@ -56,6 +54,11 @@ class NewTrainForm extends Component {
       return true;
     }
     return false;
+  };
+
+  cancel = () => {
+    this.clearForm();
+    this.props.history.push("/view_user_trains");
   };
 
   clearForm = () => {
@@ -81,6 +84,11 @@ class NewTrainForm extends Component {
             <label htmlFor="train-destination">Destination</label>
             <input
               type="text"
+              className={
+                !this.state.destination && this.props.trainErrors.length > 0
+                  ? "errors"
+                  : ""
+              }
               id="train-destination"
               name="destination"
               placeholder="Destination"
@@ -92,6 +100,12 @@ class NewTrainForm extends Component {
               type="text"
               id="new-time"
               name="newtime"
+              className={
+                ![0, 4].includes(this.state.newtime.length) &&
+                this.props.trainErrors.length > 0
+                  ? "errors"
+                  : ""
+              }
               placeholder="New Time (if late). Format HHMM"
               value={this.state.newtime}
               onChange={this.handleChange}
@@ -101,6 +115,12 @@ class NewTrainForm extends Component {
               type="text"
               id="new-time-24"
               name="newtime24"
+              className={
+                ![0, 4].includes(this.state.newtime24.length) &&
+                this.props.trainErrors.length > 0
+                  ? "errors"
+                  : ""
+              }
               placeholder="New Time (if late) HHMM 24h."
               value={this.state.newtime24}
               onChange={this.handleChange}
@@ -111,6 +131,11 @@ class NewTrainForm extends Component {
               type="text"
               id="train-origin"
               name="origin"
+              className={
+                !this.state.origin && this.props.trainErrors.length > 0
+                  ? "errors"
+                  : ""
+              }
               placeholder="Train Origin"
               value={this.state.origin}
               onChange={this.handleChange}
@@ -120,6 +145,12 @@ class NewTrainForm extends Component {
               type="text"
               id="train-remarks"
               name="remarks_boarding"
+              className={
+                !this.state.remarks_boarding &&
+                this.props.trainErrors.length > 0
+                  ? "errors"
+                  : ""
+              }
               placeholder="Remarks"
               value={this.state.remarks_boarding}
               onChange={this.handleChange}
@@ -129,6 +160,11 @@ class NewTrainForm extends Component {
               type="text"
               id="train-scheduled-arrival"
               name="scheduled"
+              className={
+                !this.state.scheduled && this.props.trainErrors.length > 0
+                  ? "errors"
+                  : ""
+              }
               placeholder="Scheduled Arrival Format HHMM"
               value={this.state.scheduled}
               onChange={this.handleChange}
@@ -139,6 +175,11 @@ class NewTrainForm extends Component {
               type="text"
               id="train-scheduled-arrival-24"
               name="scheduled24"
+              className={
+                !this.state.scheduled24 && this.props.trainErrors.length > 0
+                  ? "errors"
+                  : ""
+              }
               placeholder="Scheduled Arrival 24h. Format HHMM"
               value={this.state.scheduled24}
               onChange={this.handleChange}
@@ -148,6 +189,11 @@ class NewTrainForm extends Component {
               type="text"
               id="train-service"
               name="service"
+              className={
+                !this.state.service && this.props.trainErrors.length > 0
+                  ? "errors"
+                  : ""
+              }
               placeholder="Service Name"
               value={this.state.service}
               onChange={this.handleChange}
@@ -157,23 +203,16 @@ class NewTrainForm extends Component {
               type="text"
               id="train-number"
               name="trainno"
+              className={
+                !this.state.trainno && this.props.trainErrors.length > 0
+                  ? "errors"
+                  : ""
+              }
               placeholder="Number"
               value={this.state.trainno}
               onChange={this.handleChange}
             />
             <br />
-            {/* <textarea
-              id="fix-me"
-              name="errors"
-              placeholder=""
-              disabled
-              className={
-                this.isValid() && this.props.trainErrors.length > 0
-                  ? ""
-                  : "error"
-              }
-              value={this.props.trainErrors.join(", ")}
-            /> */}
           </div>
           <br />
           <button
@@ -191,6 +230,14 @@ class NewTrainForm extends Component {
             onClick={this.clearForm}
           >
             Clear
+          </button>
+          <button
+            className="clear-btn"
+            type="button"
+            id="cancel"
+            onClick={this.cancel}
+          >
+            Cancel
           </button>
         </form>
         {this.props.trainErrors.length > 0 ? (
