@@ -232,7 +232,7 @@ class NewTrainForm extends Component {
             Clear
           </button>
           <button
-            className="clear-btn"
+            className="cancel-btn"
             type="button"
             id="cancel"
             onClick={this.cancel}
