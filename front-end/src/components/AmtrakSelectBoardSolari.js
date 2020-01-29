@@ -9,6 +9,23 @@ import SplitFlapDisplay from "react-split-flap-display";
 import Time from "./Time";
 
 class AmtrakSelectBoard extends Component {
+  componentDidMount() {
+    this.interval1 = setInterval(() => this.blink(), 1000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval1);
+  }
+
+  blink() {
+    const boardingTrains = document.getElementsByClassName("boarding");
+    if (boardingTrains.length > 0) {
+      Array.from(boardingTrains).forEach(train => {
+        train.classList.toggle("hidden");
+      });
+    }
+  }
+
   render() {
     const trainsInfo =
       this.props.amtrakTrains &&
