@@ -7,7 +7,7 @@ const remarksHelper = remark => {
     case "On Time":
       return "green";
     case "Boarding":
-      return "green";
+      return "green boarding";
     case "Arrived":
       return "green";
     default:
