@@ -171,6 +171,10 @@ button {
   border: 5px solid red;
 }
 
+.hidden {
+  visibility: hidden;
+}
+
 /* .display-item {
   color: yellow;
   background-color: black;
