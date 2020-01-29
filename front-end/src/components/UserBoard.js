@@ -19,27 +19,21 @@ import Time from "./Time";
 import LikeButton from "./LikeButton";
 
 class UserBoard extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      time: new Date().toLocaleTimeString("en-US"),
-      time24h: new Date().toLocaleTimeString("en-GB")
-    };
-  }
-
   componentDidMount() {
-    this.intervalID = setInterval(() => this.tick(), 1000);
+    this.interval1 = setInterval(() => this.blink(), 1000);
   }
 
   componentWillUnmount() {
-    clearInterval(this.intervalID);
+    clearInterval(this.interval1);
   }
 
-  tick() {
-    this.setState({
-      time: new Date().toLocaleTimeString("en-US"),
-      time24h: new Date().toLocaleTimeString("en-GB")
-    });
+  blink() {
+    const boardingTrains = document.getElementsByClassName("boarding");
+    if (boardingTrains.length > 0) {
+      Array.from(boardingTrains).forEach(train => {
+        train.classList.toggle("hidden");
+      });
+    }
   }
 
   shouldComponentUpdate = nextProps => {
