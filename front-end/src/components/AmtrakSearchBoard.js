@@ -58,7 +58,7 @@ class AmtrakSearchBoard extends Component {
               <th>Train Name</th>
               <th>Destination</th>
               <th>Origin</th>
-              <th>Scheduled Time</th>
+              <th>Scheduled</th>
               <th>Scheduled - 24h</th>
               <th>New Time</th>
               <th>New Time - 24h</th>
