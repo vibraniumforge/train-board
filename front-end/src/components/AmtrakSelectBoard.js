@@ -4,7 +4,7 @@ import { serviceHelper } from "../helpers/serviceHelper";
 import { remarksHelper } from "../helpers/remarksHelper";
 import { timeHelper } from "../helpers/timeHelper";
 import { stationHelper } from "../helpers/stationHelper";
-
+import { serviceClassHelper } from "../helpers/serviceClassHelper";
 import Time from "./Time.js";
 
 class AmtrakSelectBoard extends Component {
@@ -33,7 +33,9 @@ class AmtrakSelectBoard extends Component {
         return train.trainno.trim() ? (
           <tr key={index}>
             <td>{train.trainno}</td>
-            <td>{serviceHelper(train.service)}</td>
+            <td className={serviceClassHelper(train.service)}>
+              {serviceHelper(train.service)}
+            </td>
             <td>{stationHelper(train.destination)}</td>
             <td>{stationHelper(train.origin)}</td>
             <td>{timeHelper(train.scheduled)}</td>
@@ -60,7 +62,7 @@ class AmtrakSelectBoard extends Component {
                 <th>Train Name</th>
                 <th>Destination</th>
                 <th>Origin</th>
-                <th>Scheduled Time</th>
+                <th>Scheduled</th>
                 <th>Scheduled - 24h</th>
                 <th>New Time</th>
                 <th>New Time - 24h</th>
