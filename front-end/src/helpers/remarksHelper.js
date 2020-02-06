@@ -10,6 +10,8 @@ const remarksHelper = remark => {
       return "green boarding";
     case "Arrived":
       return "green";
+    case "S. Disrupt":
+      return "red";
     default:
       return "red";
   }
