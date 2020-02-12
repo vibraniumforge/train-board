@@ -18,6 +18,14 @@ class AmtrakSearchBoard extends Component {
     clearInterval(this.interval1);
   }
 
+  // shouldComponentUpdate = nextProps => {
+  //   if (this.props.amtrakTrains.length === nextProps.amtrakTrains.length) {
+  //     return false;
+  //   } else {
+  //     return true;
+  //   }
+  // };
+
   blink() {
     const boardingTrains = document.getElementsByClassName("boarding");
     if (boardingTrains.length > 0) {
@@ -27,29 +35,15 @@ class AmtrakSearchBoard extends Component {
     }
   }
 
-  trainNo = trainno => {
-    if (parseInt(trainno, 10) >= 300 && parseInt(trainno, 10) <= 400) {
-      return true;
-    } else {
-      return false;
-    }
-  };
-
   render() {
     const trainsInfo =
       this.props.amtrakTrains &&
-      this.props.amtrakTrains !== [] &&
+      this.props.amtrakTrains.length !== 0 &&
       this.props.amtrakTrains.map((train, index) => {
         return train.trainno.trim() ? (
           <tr key={index}>
             <td>{train.trainno}</td>
-            <td
-              className={
-                this.trainNo(train.trainno.trim())
-                  ? "midwest"
-                  : serviceClassHelper(train.service)
-              }
-            >
+            <td className={serviceClassHelper(train.service)}>
               {" "}
               {serviceHelper(train.service)}
             </td>
@@ -84,7 +78,7 @@ class AmtrakSearchBoard extends Component {
             </tr>
           </thead>
           <tbody id="train-board">
-            {trainsInfo && trainsInfo !== [] && trainsInfo[0] ? (
+            {trainsInfo.length > 0 ? (
               trainsInfo
             ) : (
               <tr>
