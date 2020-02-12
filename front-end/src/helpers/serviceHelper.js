@@ -23,7 +23,7 @@ const serviceHelper = service => {
     case "Lake S. Ltd.":
       return "Lake Shore";
     case "LSL Boston":
-      return "LSL - Boston";
+      return "Lake Shore Limited";
     case "Cardinal":
       return "Cardinal";
     case "Auto Train":
@@ -55,11 +55,10 @@ const serviceHelper = service => {
       return "Lincoln Service";
     case "C. Sandburg":
       return "Carl Sandburg";
-
     case "Ill. Zephyr":
       return "Illinois Zephyr";
     case "Empire Serv.":
-      return "Empire Serv.";
+      return "Empire Service";
 
     case "Pere Marq.":
       return "Pere Marquette";
