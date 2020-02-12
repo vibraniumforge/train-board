@@ -24,7 +24,7 @@ const serviceClassHelper = service => {
     case "Pennsylvan.":
       return "default-amtrak-long-distance";
     case "Lake S. Ltd.":
-      return "Lake Shore";
+      return "default-amtrak-long-distance";
     case "LSL Boston":
       return "default-amtrak-long-distance";
     case "Cardinal":
@@ -34,7 +34,7 @@ const serviceClassHelper = service => {
     case "Vermonter":
       return "Vermonter";
     case "City of N O":
-      return "City of New Orleans";
+      return "default-amtrak-long-distance";
     case "Maple Leaf":
       return "maple-leaf";
     case "Adirondak":
@@ -42,7 +42,7 @@ const serviceClassHelper = service => {
     case "Piedmont":
       return "Piedmont";
     case "Carolinian":
-      return "Carolinian";
+      return "default-amtrak-long-distance";
     case "Palmetto":
       return "palmetto";
     case "Silver Star":
@@ -64,15 +64,24 @@ const serviceClassHelper = service => {
     case "Riv. Runner":
       return "river-runner";
     case "Lincoln S.":
-      return "lincoln-service";
+      return "midwest";
     case "C. Sandburg":
-      return "Carl Sandburg";
-    // case "Pere Marq.":
-    //   return "Pere Marquette";
+      return "midwest";
+    case "Pere Marq.":
+      return "midwest";
+    case "Blue Water":
+      return "midwest";
+    case "Illini":
+      return "midwest";
+    case "Hiawatha":
+      return "midwest";
+    case "Ill. Zephyr":
+      return "midwest";
+    case "Wolverine":
+      return "midwest";
+
     // case "Hoosier St.":
     //   return "Hoosier State";
-    // case "Ill. Zephyr":
-    //   return "Illinois Zephyr";
 
     // NE corridors
     case "Acela Expr.":
