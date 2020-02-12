@@ -1,10 +1,10 @@
 .default-amtrak-long-distance {
   color: blue;
-  background-color: silver;
+  background-color: gray;
 }
 
 .default-amtrak-medium-distance {
-  color: silver;
+  color: gray;
   background-color: blue;
 }
 
@@ -30,12 +30,7 @@
 
 .river-runner {
   color: blue;
-  background-color: red;
-}
-
-.lincoln-service {
-  color: black;
-  background-color: white;
+  background-color: green;
 }
 
 .northeast-regional {
@@ -69,14 +64,15 @@
 }
 
 .empire-service {
-  color: orange;
-  background-color: blue;
+  color: blue;
+  background-color: orange;
 }
 
 .midwest {
   color: black;
   background-color: white;
 }
+
 .maple-leaf {
   color: white;
   background-color: red;
