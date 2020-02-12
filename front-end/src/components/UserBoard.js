@@ -49,26 +49,12 @@ class UserBoard extends Component {
     this.props.history.push("edit_user_train");
   };
 
-  trainNo = trainno => {
-    if (parseInt(trainno, 10) >= 300 && parseInt(trainno, 10) <= 400) {
-      return true;
-    } else {
-      return false;
-    }
-  };
-
   render() {
     const trainsInfo = this.props.userTrains.map(train => {
       return train.trainno.trim() ? (
         <tr key={train.id}>
           <td>{train.trainno}</td>
-          <td
-            className={
-              this.trainNo(train.trainno.trim())
-                ? "midwest"
-                : serviceClassHelper(train.service)
-            }
-          >
+          <td className={serviceClassHelper(train.service)}>
             {" "}
             {serviceHelper(train.service)}
           </td>
@@ -90,8 +76,6 @@ class UserBoard extends Component {
             >
               Edit
             </button>
-          </td>
-          <td>
             <button
               type="button"
               data-id={train.id}
@@ -101,6 +85,7 @@ class UserBoard extends Component {
               Delete
             </button>
           </td>
+          <td></td>
           <td>
             <LikeButton />
           </td>
