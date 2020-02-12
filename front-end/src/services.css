@@ -3,6 +3,11 @@
   background-color: silver;
 }
 
+.default-amtrak-medium-distance {
+  color: silver;
+  background-color: blue;
+}
+
 .pacific-surfliner {
   background-color: royalblue;
   color: whitesmoke;
@@ -63,6 +68,15 @@
   background-color: darkblue;
 }
 
+.empire-service {
+  color: orange;
+  background-color: blue;
+}
+
+.midwest {
+  color: black;
+  background-color: white;
+}
 .maple-leaf {
   color: white;
   background-color: red;
