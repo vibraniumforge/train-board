@@ -4,16 +4,10 @@ const remarksHelper = remark => {
     return "green";
   }
   switch (trimmedRemark) {
-    case "On Time":
-      return "green";
-    case "Boarding":
-      return "green boarding";
-    case "Arrived":
-      return "green";
     case "S. Disrupt":
-      return "red";
+      return "Service Disrupt";
     default:
-      return "red";
+      return trimmedRemark;
   }
 };
 
