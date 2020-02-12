@@ -59,7 +59,7 @@ const serviceHelper = service => {
     case "Ill. Zephyr":
       return "Illinois Zephyr";
     case "Empire Serv.":
-      return "Empire Svc.";
+      return "Empire Serv.";
 
     case "Pere Marq.":
       return "Pere Marquette";
