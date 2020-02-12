@@ -5,6 +5,8 @@ const serviceClassHelper = service => {
       return "default-amtrak-long-distance";
     case "SW Chief":
       return "default-amtrak-long-distance";
+    case "Cal. Zephyr":
+      return "default-amtrak-long-distance";
     case "California Zephyr":
       return "default-amtrak-long-distance";
     case "Empire Bldr.":
@@ -14,17 +16,17 @@ const serviceClassHelper = service => {
     case "Coast Star" || "Coast Starlight":
       return "default-amtrak-long-distance";
     case "Crescent":
-      return "Crescent";
+      return "default-amtrak-long-distance";
     case "Texas Eagle":
-      return "Texas Eagle";
+      return "default-amtrak-long-distance";
     case "Capitol Ltd.":
-      return "Capitol Ltd";
+      return "default-amtrak-long-distance";
     case "Pennsylvan.":
-      return "Pennsylvanian";
+      return "default-amtrak-long-distance";
     case "Lake S. Ltd.":
       return "Lake Shore";
     case "LSL Boston":
-      return "LSL - Boston";
+      return "default-amtrak-long-distance";
     case "Cardinal":
       return "Cardinal";
     case "Auto Train":
@@ -43,7 +45,7 @@ const serviceClassHelper = service => {
       return "Carolinian";
     case "Palmetto":
       return "palmetto";
-    case "Sil. Star":
+    case "Silver Star":
       return "silver-services";
     case "Sil. Meteor":
       return "silver-services";
@@ -76,11 +78,11 @@ const serviceClassHelper = service => {
     case "Acela Expr.":
       return "acela-express";
     case "NE Regional":
-      return "default-amtrak-long-distance";
+      return "default-amtrak-medium-distance";
     case "Keystone":
       return "keystone";
     case "Empire Serv.":
-      return "Empire Svc.";
+      return "empire-service";
 
     // international
     case "Eurostar":
