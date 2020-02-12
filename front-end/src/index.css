@@ -20,6 +20,10 @@ code {
   font-weight: bold;
 }
 
+li {
+  list-style-type: none;
+}
+
 #navbar a {
   margin: 16px;
   color: red;
@@ -140,7 +144,6 @@ button {
   font-weight: bold;
 }
 
-/* .submit-btn { */
 #submit {
   margin: 10px;
   background-color: navy;
