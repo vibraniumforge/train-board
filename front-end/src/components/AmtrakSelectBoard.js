@@ -26,14 +26,6 @@ class AmtrakSelectBoard extends Component {
     }
   }
 
-  trainNo = trainno => {
-    if (parseInt(trainno, 10) >= 300 && parseInt(trainno, 10) <= 400) {
-      return true;
-    } else {
-      return false;
-    }
-  };
-
   render() {
     const trainsInfo =
       this.props.amtrakTrains &&
@@ -42,13 +34,7 @@ class AmtrakSelectBoard extends Component {
         return train.trainno.trim() ? (
           <tr key={index}>
             <td>{train.trainno}</td>
-            <td
-              className={
-                this.trainNo(train.trainno.trim())
-                  ? "midwest"
-                  : serviceClassHelper(train.service)
-              }
-            >
+            <td className={serviceClassHelper(train.service)}>
               {serviceHelper(train.service)}
             </td>
             <td>{stationHelper(train.destination)}</td>
