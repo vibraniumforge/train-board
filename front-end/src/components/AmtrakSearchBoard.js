@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 
 import { serviceHelper } from "../helpers/serviceHelper";
+import { serviceClassHelper } from "../helpers/serviceClassHelper";
 import { remarksHelper } from "../helpers/remarksHelper";
+import { remarksClassHelper } from "../helpers/remarksClassHelper";
 import { timeHelper } from "../helpers/timeHelper";
 import { stationHelper } from "../helpers/stationHelper";
 
@@ -25,6 +27,14 @@ class AmtrakSearchBoard extends Component {
     }
   }
 
+  trainNo = trainno => {
+    if (parseInt(trainno, 10) >= 300 && parseInt(trainno, 10) <= 400) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
   render() {
     const trainsInfo =
       this.props.amtrakTrains &&
@@ -33,16 +43,24 @@ class AmtrakSearchBoard extends Component {
         return train.trainno.trim() ? (
           <tr key={index}>
             <td>{train.trainno}</td>
-            <td>{serviceHelper(train.service)}</td>
+            <td
+              className={
+                this.trainNo(train.trainno.trim())
+                  ? "midwest"
+                  : serviceClassHelper(train.service)
+              }
+            >
+              {" "}
+              {serviceHelper(train.service)}
+            </td>
             <td>{stationHelper(train.destination)}</td>
             <td>{stationHelper(train.origin)}</td>
             <td>{timeHelper(train.scheduled)}</td>
             <td>{timeHelper(train.scheduled24)}</td>
             <td>{timeHelper(train.newtime)}</td>
             <td>{timeHelper(train.newtime24)}</td>
-
-            <td className={remarksHelper(train.remarks_boarding)}>
-              {serviceHelper(train.remarks_boarding)}
+            <td className={remarksClassHelper(train.remarks_boarding)}>
+              {remarksHelper(train.remarks_boarding)}
             </td>
           </tr>
         ) : null;
