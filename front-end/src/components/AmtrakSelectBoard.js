@@ -5,6 +5,7 @@ import { serviceClassHelper } from "../helpers/serviceClassHelper";
 import { remarksHelper } from "../helpers/remarksHelper";
 import { remarksClassHelper } from "../helpers/remarksClassHelper";
 import { timeHelper } from "../helpers/timeHelper";
+import { timeHelper24 } from "../helpers/timeHelper24";
 import { stationHelper } from "../helpers/stationHelper";
 import Time from "./Time.js";
 
@@ -39,10 +40,10 @@ class AmtrakSelectBoard extends Component {
             </td>
             <td>{stationHelper(train.destination)}</td>
             <td>{stationHelper(train.origin)}</td>
-            <td>{timeHelper(train.scheduled)}</td>
-            <td>{timeHelper(train.scheduled24)}</td>
-            <td>{timeHelper(train.newtime)}</td>
-            <td>{timeHelper(train.newtime24)}</td>
+            <td>{timeHelper(train.scheduled, train.scheduled24)}</td>
+            <td>{timeHelper24(train.scheduled24)}</td>
+            <td>{timeHelper(train.newtime, train.newtime24)}</td>
+            <td>{timeHelper24(train.newtime24)}</td>
             <td className={remarksClassHelper(train.remarks_boarding)}>
               {remarksHelper(train.remarks_boarding)}
             </td>
