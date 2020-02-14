@@ -28,17 +28,17 @@ const serviceClassHelper = service => {
     case "LSL Boston":
       return "default-amtrak-long-distance";
     case "Cardinal":
-      return "Cardinal";
+      return "default-amtrak-long-distance";
     case "Auto Train":
       return "Auto Train";
     case "Vermonter":
-      return "Vermonter";
+      return "default-amtrak-long-distance";
     case "City of N O":
       return "default-amtrak-long-distance";
     case "Maple Leaf":
       return "maple-leaf";
-    case "Adirondak":
-      return "Adirondak";
+    case "Adirondack":
+      return "default-amtrak-long-distance";
     case "Piedmont":
       return "Piedmont";
     case "Carolinian":
@@ -49,6 +49,8 @@ const serviceClassHelper = service => {
       return "silver-services";
     case "Sil. Meteor":
       return "silver-services";
+    case "Ethan Allen":
+      return "default-amtrak-medium-distance";
 
     // corridors west
     case "PAC SURFLNR":
@@ -79,6 +81,8 @@ const serviceClassHelper = service => {
       return "midwest";
     case "Wolverine":
       return "midwest";
+    case "Saluki":
+      return "midwest";
 
     // case "Hoosier St.":
     //   return "Hoosier State";
@@ -102,6 +106,14 @@ const serviceClassHelper = service => {
       return "railjet";
     case "TGV":
       return "tgv";
+    case "EuroNight":
+      return "euro-night";
+    case "EuroCity":
+      return "euro-city";
+    case "InterCity":
+      return "inter-city";
+    case "Intercity Express":
+      return "inter-city-express";
     default:
       return "";
   }
