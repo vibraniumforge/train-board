@@ -92,3 +92,23 @@
   color: whitesmoke;
   background-color: blue;
 }
+
+.euro-night {
+  color: black;
+  background-color: white;
+}
+
+.euro-city {
+  color: black;
+  background-color: white;
+}
+
+.inter-city {
+  color: red;
+  background-color: white;
+}
+
+.inter-city-express {
+  color: gray;
+  background-color: white;
+}
