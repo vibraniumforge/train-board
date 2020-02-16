@@ -16,7 +16,11 @@ trains = Train.create([
     {destination: "Praha - Hlavní Nádraží", newtime:"", newtime24:"", origin: "Vienna Hauptbahnhof", remarks_boarding: "On Time", scheduled: "0730", scheduled24: "0730", service: "Railjet", trainno: "21"},
     {destination: "Københavns Hovedbanegård", newtime:"", newtime24:"", origin: "Munich Westbahnhof", remarks_boarding: "On Time", scheduled: "0600", scheduled24: "1800", service: "EuroNight", trainno: "262"},
     {destination: "Frankfurt Hauptbahnhof", newtime:"", newtime24:"", origin: "Munich Hauptbahnhof", remarks_boarding: "On Time", scheduled: "0730", scheduled24: "1930", service: "Intercity Express", trainno: "23"},
-    {destination: "Hogwart's Caslte", newtime:"", newtime24:"", origin: "London - King's Cross", remarks_boarding: "On Time", scheduled: "1000", scheduled24: "2200", service: "Hogwart's Express", trainno: "25"},
+    {destination: "Portland Union Station", newtime:"", newtime24:"", origin: "Seattle King Street", remarks_boarding: "On Time", scheduled: "0725", scheduled24: "0725", service: "Cascades", trainno: "501"},
+    {destination: "Seattle King Street", newtime:"", newtime24:"", origin: "Portland Untion Station", remarks_boarding: "On Time", scheduled: "0720", scheduled24: "1920", service: "Cascades", trainno: "508"},
+    {destination: "Vancouver Pacific Central", newtime:"", newtime24:"", origin: "Seattle King Street", remarks_boarding: "On Time", scheduled: "0745", scheduled24: "0745", service: "Cascades", trainno: "516"},
+    {destination: "Seattle King Street", newtime:"", newtime24:"", origin: "Vancouver Pacific Central", remarks_boarding: "On Time", scheduled: "0545", scheduled24: "1745", service: "Cascades", trainno: "519"},
+    {destination: "Hogwart's Caslte", newtime:"", newtime24:"", origin: "London - King's Cross", remarks_boarding: "On Time", scheduled: "1000", scheduled24: "2200", service: "Hogwart's Express", trainno: "999"},
 ])
 
 puts "Seeds done."
