@@ -51,9 +51,9 @@ class UserBoard extends Component {
   };
 
   render() {
-    const trainsInfo = this.props.userTrains.map(train => {
+    const trainsInfo = this.props.userTrains.map((train, index) => {
       return train.trainno.trim() ? (
-        <tr key={train.id}>
+        <tr key={index}>
           <td>{train.trainno}</td>
           <td className={serviceClassHelper(train.service)}>
             {" "}
