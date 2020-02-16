@@ -19,14 +19,6 @@ class AmtrakSearchBoard extends Component {
     clearInterval(this.interval1);
   }
 
-  // shouldComponentUpdate = nextProps => {
-  //   if (this.props.amtrakTrains.length === nextProps.amtrakTrains.length) {
-  //     return false;
-  //   } else {
-  //     return true;
-  //   }
-  // };
-
   blink() {
     const boardingTrains = document.getElementsByClassName("boarding");
     if (boardingTrains.length > 0) {
