@@ -4,7 +4,7 @@ module Api::V1
     before_action :find_train, only: [:show, :edit, :update, :destroy]
 
     def index
-      @trains = Train.all.as_json(except: [:id, :created_at, :updated_at])
+      @trains = Train.all.as_json(except: [:created_at, :updated_at])
       render json: {message: "Trains successfully returned.", success: true, data: @trains}, status: 200
       
     end
@@ -15,7 +15,7 @@ module Api::V1
         render json: { message: "Train NOT found.", success: false, data: @train.errors.full_messages }, status: 406
       else
         puts "success"
-        render json: { message: "Train successfully returned.", success: true, data: @train.as_json(except: [:id, :created_at, :updated_at]) }, status: 200
+        render json: { message: "Train successfully returned.", success: true, data: @train.as_json(except: [:created_at, :updated_at]) }, status: 200
       end
     end
 
@@ -26,7 +26,7 @@ module Api::V1
       @train = Train.new(train_params)
       if @train.save && @train.valid?
         puts "=> train saved"
-        render json: { message: "Train successfully saved.", success: true, data: @train.as_json(except: [:id, :created_at, :updated_at]) }, status: 200
+        render json: { message: "Train successfully saved.", success: true, data: @train.as_json(except: [:created_at, :updated_at]) }, status: 200
       else
         puts "\nTrain not saved"
         puts "Errors= #{@train.errors.full_messages.join(", ")}\n "
@@ -44,7 +44,7 @@ module Api::V1
       end
       if @train.update(train_params) && @train.valid?
         puts "Train updated"
-        render json: { message: "Train successfully saved.", success: true, data: @train.as_json(except: [:id, :created_at, :updated_at]) }, status: 200
+        render json: { message: "Train successfully saved.", success: true, data: @train.as_json(except: [:created_at, :updated_at]) }, status: 200
       else
         render json: { message: "Train NOT updated because #{@train.errors.full_messages.join(", ")}", success: false, data: @train.errors.full_messages }, status: 406
         puts "Train not updated"
