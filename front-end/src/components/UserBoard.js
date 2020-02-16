@@ -103,14 +103,6 @@ class UserBoard extends Component {
                   timeZone={this.props.timeZone}
                 />
                 <tr>
-                  {/* <th colSpan="2">{this.state.time}</th>
-                <th />
-                <th colSpan="3">My Train Board</th>
-                <th />
-                <th />
-                <th colSpan="2">{this.state.time24h}</th> */}
-                </tr>
-                <tr>
                   <th>Train Number</th>
                   <th>Train Name</th>
                   <th>Destination</th>
