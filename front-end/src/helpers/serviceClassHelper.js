@@ -13,7 +13,9 @@ const serviceClassHelper = service => {
       return "default-amtrak-long-distance";
     case "EB Portland":
       return "default-amtrak-long-distance";
-    case "Coast Star" || "Coast Starlight":
+    case "Coast Star":
+      return "default-amtrak-long-distance";
+    case "Coast Starlight":
       return "default-amtrak-long-distance";
     case "Crescent":
       return "default-amtrak-long-distance";
